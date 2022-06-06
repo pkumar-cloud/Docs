@@ -3,6 +3,8 @@
 ## Install Maven
 ```sh
 yum install wget
+cd /opt/
+# download the latest version from maven website.
 wget https://mirror.lyrahosting.com/apache/maven/maven-3/3.8.1/binaries/apache-maven-3.8.1-bin.tar.gz
 tar -xvzf apache-maven-3.8.1-bin.tar.gz
 export M2_HOME=/opt/apache-maven-3.8.1
