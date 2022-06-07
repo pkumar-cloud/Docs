@@ -19,6 +19,9 @@ helm list
 ```sh
 mkdir /var/lib/jenkins/.kube
 copy config file under .kube directory with jenkins ownership
+
+# to fix group-readable message:
+chmod 600 /var/lib/jenkins/.kube/config
 ```
 
 
