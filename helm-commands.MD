@@ -9,7 +9,7 @@ helm repo search <chartname>
 helm repo search stable
 helm search repo mysql
 
-helm install repo stable/<chartname> <releasename>
+helm install <releasename> stable/<chartname>
 # if present on local:
 helm install <releasename> <chartname>
 helm list
@@ -23,4 +23,6 @@ helm package <chartname>
 helm package mysql
 
 helm uninstall RELEASE_NAME
+
+helm create <chartname>
 ```
