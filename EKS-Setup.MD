@@ -27,13 +27,15 @@ You can follow same procedure in the official  AWS document [Getting started wit
    eksctl version
    ```
   
-3. Create an IAM Role and attache it to EC2 instance Management Host  
+3. Create an IAM Role and attach it to EC2 instance Management Host  
    `Note: create IAM user with programmatic access if your bootstrap system is outside of AWS`   
    IAM user should have access to   
    IAM   
    EC2   
    VPC    
    CloudFormation
+   AdministratorAccess
+   Attach this role to EKS mgmt EC2 instance.
 
 4. Create EKS cluster and nodes from EC2 Management Host
    ```sh
@@ -45,18 +47,22 @@ You can follow same procedure in the official  AWS document [Getting started wit
    --zones <AZ-1>,<AZ-2>
    
    example:
-   eksctl create cluster --name cloudfreak-cluster \
-      --region ap-south-1 \
+   eksctl create cluster --name pkeks-cluster \
+   --region ap-south-1 \
    --node-type t2.medium \
+   --nodes-min 2 \
+   --nodes-max 2 \ 
+   --zones ap-south-1a,ap-south-1b
     ```
 
 5. To delete the EKS clsuter 
    ```sh 
-   eksctl delete cluster cloudfreak-cluster --region ap-south-1
+   eksctl delete cluster pkeks-cluster --region ap-south-1
    ```
    
 6. Validate your cluster using by creating by checking nodes and by creating a pod 
    ```sh 
    kubectl get nodes
+   kubectl get po -n kube-system
    kubectl run pod tomcat --image=tomcat 
    ```
