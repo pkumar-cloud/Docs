@@ -44,6 +44,11 @@ yum -y install jenkins
 
 #To start jenkins on a diff port, Update port number in:
 /etc/sysconfig/jenkins
+
+#To uninstall Jenkins
+sudo service jenkins stop
+sudo yum remove jenkins
+sudo rm -r /var/lib/jenkins
 ```
 
 ### Start Jenkins
