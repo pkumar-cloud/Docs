@@ -11,7 +11,7 @@ We will be using open java for our demo, Get latest version from http://openjdk.
 yum -y install java-1.8*
 #yum -y install java-1.8.0-openjdk
 #To check and select one out of multiple java versions available
- sudo /usr/sbin/alternatives --config java
+sudo /usr/sbin/alternatives --config java
 ```
 
 ### Confirm Java Version
